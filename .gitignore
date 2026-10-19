@@ -1,0 +1,58 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python bytecode and packaging
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+.eggs/
+dist/
+build/
+.Python
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# GNSS runtime data and logs
+enregistrements/*
+!enregistrements/.gitkeep
+**/enregistrements/*
+!**/enregistrements/.gitkeep
+*.nmea
+*.gpx
+*.log
+
+# Local Wi-Fi credentials & secrets
+config/wifi/*.nmconnection
+**/config/wifi/*.nmconnection
+
+# OS & editor artifacts
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.cursor/
+.agents/
+.codex/
+
+# Metadata files
+._*
+
+# Generated maps (contain real GPS tracks)
+carte_*.html
+
+# README screenshots (contain real GPS tracks)
+docs/images/

@@ -1,0 +1,22 @@
+[Unit]
+Description=Rover UM980 GNSS recorder and NTRIP client
+Wants=NetworkManager.service
+After=NetworkManager.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=vtk
+Group=vtk
+SupplementaryGroups=dialout plugdev
+WorkingDirectory=/home/vtk/Documents/rover-um980
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/vtk/Documents/rover-um980/.venv/bin/python /home/vtk/Documents/rover-um980/save_gps_nmea.py --port /dev/serial/by-id/usb-FTDI_FT230X_Basic_UART_DP066E0U-if00-port0 --ntrip --quiet
+Restart=always
+RestartSec=5
+KillSignal=SIGINT
+TimeoutStopSec=15
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target
